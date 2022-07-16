@@ -2,7 +2,7 @@ import json
 class SatData:
     def __init__(self):
         #Read the json file
-        with open('test_json.json','r') as f:
+        with open('sat.json','r') as f:
             self.data = json.load(f)['data']
     def save_as_csv(self,dbns):
         resData=[]#to store the required dbns data
