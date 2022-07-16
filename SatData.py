@@ -2,7 +2,7 @@ import json
 class SatData:
     def __init__(self):
         #Read the json file
-        with open('sat.json','r') as f:
+        with open('sat.json', 'r') as f:
             self.data = json.load(f)['data']
     def save_as_csv(self,dbns):
         resData=[]#to store the required dbns data
@@ -11,12 +11,12 @@ class SatData:
             if data[8] in dbns: #8assuming dbns is located at position 8
                 resData.append(data)
         #Sorting the dbns data based upon the dbns
-        resData = sorted(resData,key=lambda x:x[8])
+        resData = sorted(resData, key=lambda x:x[8])
 
         #Create output.csv to store the reult
-        with open('output.csv','a+') as f:
+        with open('output.csv', 'a+') as f:
             #Add the row of column header
-            header = [ str(i) for i in range(len(resData[0]))]
+            header = [str(i) for i in range(len(resData[0]))]
             f.write(','.join(header))
             #Create new row
             f.write('\n')
